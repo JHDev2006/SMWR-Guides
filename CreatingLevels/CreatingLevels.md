@@ -13,7 +13,7 @@ This tutorial will also assume that you have already successfully imported the p
 
 Now that you are hopefully familiar with how Godot functions. Let's get into making your first level!
 
-
+![alt text](image-21.png)
 
 ## Setup
 Creating a level is easy! To start we first want to make a new scene. We can do this by clicking "Scene" and then "New Scene" at the top right corner of the editor.
@@ -167,10 +167,17 @@ Depending on whether your level is to be played through the Custom Level Select 
 
 So first, navigate to the folder you want to store your level data in, using the FileSystem. From there, you can right click and select `Create New > Resource`, then select LevelInfo, where you can then save the file with the appropriate name. From there, you can then fill out the data presented in the inspector, on the newly created LevelInfo resource.
 
-Once you've filled out what you need, you can then export the relevant files needed as a .pck file! You can do that by clicking the `Project > Export` at the very top left of the editor.
+Once your happy with everything, lets export the level! Go to the 'ModPacker' tab next to the FileSystem. This is where mods and such are packed into a nice lil pck file, which you can then share with everyone!
 
-From there, ensure that you have the relevant export templates, and if not install them, using the steps Godot provides. Choose any operating system or platform, as this does not matter. Then go to `Resources` at the right of the window, then select, `Export selected resources (and depenencies)`, then select all of the files which are needed to load your level. This should include things like the LevelInfo file and the scenes which are used for your level. 
+![alt text](image-22.png)
 
-If you include any custom content, like custom graphics or music, the asset files for them should be included as well (.png's, .wav's, etc), along side any scripts or scenes used.
+*It should look something like this*
 
-Once everythings been selected, click `Export PCK/ZIP`, then choose `.pck` as the file type you want to export as, then simply name the file, and you can then distribute the newly made `.pck` file as your level!, if your using any custom content thats not in the base game, be sure to load in the level first in a fresh install of the game and make sure you didnt forget anything!
+from there, you wanna keep track of the files you changed / added, for the context of this guide, it should just be the level scene(s) and the `LevelInfo` resource file
+
+To start, get the file paths of the scenes and resources you use, this can be easily done by switching to the filesystem tab and rightclicking the file you want to add, and selecting Copy Path. (NOT COPY ABSOLUTE PATH), the paste it into the "File Path to add..." field, then click "Add Path to list" thisll add it to the list at the top, repeat this for every file you want to include in the pck.
+![alt text](image-23.png)
+
+Once your happy with the list, put the name of pck file you want, in the "PCK File Name." field, then click "Export Mod!", you can find your newly exported level in "user://ExportedAddons", the user:// folder can be found by clicking `Editor > Open User Data Folder`
+
+![alt text](image-24.png)
